@@ -15,15 +15,15 @@ knitr::opts_chunk$set(echo = TRUE, strip.white=FALSE, background ="FFFFFF")
 ### Objective
 
 
-Address information from Medical records can commonly differ from official address registries such as those maintained by county and state agencies, and the United State Postal Service. One example is when a patients address is transcriped during data entry from handfilled patient forms. Programs such as ZP4, or geocode files utilized by ArcMap's address matcher are able to detect errors such as mis-ordered adresss elements and basic missing elements such as directionals or street suffix's. Manually verifying address with lower confidence can be time-consuming when working with large data sets.
+Address information from Medical records can commonly differ from official address registries such as those maintained by county and state agencies, and the United State Postal Service. One example is when a patients address is transcribed during data entry from handfilled patient forms. Programs such as ZP4, or geocode files utilized by ArcMap's address matcher are able to detect errors such as mis-ordered address elements and basic missing elements such as directional or street suffix's. Manually verifying address with lower confidence can be time-consuming when working with large data sets.
 
-In order to reduce manual processes this program aims to make basic corrections, or formatting to common element variations such as multiple spellings of 'S' or 'RD'. Additionally, information deemed non-essential to geocoding such as apartment number will be seperated from the street address. The program has three distincive sections. 
+In order to reduce manual processes this program aims to make basic corrections, or formatting to common element variations such as multiple spellings of 'S' or 'RD'. Additionally, information deemed non-essential to geocoding such as apartment number will be seperated from the street address. The program has three distinctive sections. 
 
-The prepatory phase reads in patient data and assigns variables to generic names. The rest of the code ideally does not have to be edited, however certain sections in the manual parsing may be manipulated depending on the address qualities.
+The preparatory phase reads in de-identified address data and assigns variables to generic names. The rest of the code ideally does not have to be edited, however certain sections in the manual parsing may be manipulated depending on the address qualities.
 
 The first utilizes the 'postmstr' package which performs basic parsing and re-formatting of directional and street suffix elements. 
 
-The second analzes the reamining address name with most elements parsed out already, using frequency analysis throughout to build custom criteria of individual strings to parse out or re-format. This is accomplished using nested loops, that analyze each adress sequentially, splitting the address into sub-strings and scaning for identifiers. 
+The second analyzes the remaining address name with most elements parsed out already, using frequency analysis throughout to build custom criteria of individual strings to parse out or re-format. This is accomplished using nested loops, that analyze each adress sequentially, splitting the address into sub-strings and scanning for identifiers. 
 
 
 
